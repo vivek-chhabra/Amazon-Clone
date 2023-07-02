@@ -1,0 +1,117 @@
+.Navbar {
+    padding: 10px 20px;
+    gap: 30px;
+    align-items: center;
+    width: 100%;
+    background-color: #121920;
+    color: white;
+    justify-content: space-between;
+}
+
+.Navbar img {
+    height: 30px;
+}
+
+.search {
+    height: 40px;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Navbar form select {
+    height: 100%;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px 0 0 5px;
+    border: none;
+    font-weight: 600;
+    background-color: rgb(178, 178, 178);
+}
+
+form .search-box {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 0px !important;
+    padding-inline: 10px;
+}
+
+form .icon {
+    height: 100%;
+    width: 55px;
+    border-radius: 0 5px 5px 0;
+    display: flex;
+    background-color: #ffaa42;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+form i {
+    font-size: 120%;
+}
+
+form .icon:hover {
+    cursor: pointer;
+    background-color: #ff9a1e;
+}
+
+.links {
+    gap: 30px;
+}
+
+.links span {
+    font-weight: 600;
+    gap: 10px;
+    color: white;
+}
+
+.links a {
+    display: flex;
+    flex-direction: column;
+}
+
+.links .small-text {
+    font-size: 80%;
+    font-weight: 400;
+}
+
+.links .big-text {
+    bottom: 5px;
+    white-space: pre;
+}
+
+.links .cart {
+    color: white;
+    height: 100%;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: auto;
+}
+
+.links .cart i {
+    top: 10px;
+    font-size: 140%;
+}
+
+.no-of-items {
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    color: black;
+    background-color: #ffaa42;
+    font-size: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    bottom: 18px;
+    left: 7px;
+}
