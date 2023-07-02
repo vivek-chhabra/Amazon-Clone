@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+    position: relative;
+    font-family: 'Narnoor', serif;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* utility classes */
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
