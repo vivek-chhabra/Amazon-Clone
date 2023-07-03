@@ -10,7 +10,7 @@ export function useLoginAuth(email, password) {
     const [isCancelled, setIsCancelled] = useState(false);
 
     // consuming auth context
-    const { dispatch } = useContext(AuthContext);
+    const { dispatch, user } = useContext(AuthContext);
 
     // login with email and password
     const login = async () => {
@@ -23,8 +23,8 @@ export function useLoginAuth(email, password) {
             console.log("User Logged In Successfully");
 
             // changing the user collection at db as user logs in
-            const colRef = doc(db, "user", `${auth.currentUser.uid}`); // collection ref
-            await setDoc(colRef, { name: auth.currentUser.displayName, photoURL: auth.currentUser.photoURL, online: true });
+            const colRef = doc(db, "users", `${auth.currentUser.uid}`); // collection ref
+            await setDoc(colRef, { name: auth.currentUser.displayName, photoURL: auth.currentUser.photoURL, online: true, email: user.email, number: user.phoneNumber });
 
             // dispatch login action
             dispatch({ type: "LOGIN", payLoad: res.user });

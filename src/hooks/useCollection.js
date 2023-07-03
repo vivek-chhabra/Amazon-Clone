@@ -29,7 +29,7 @@ export function useCollection(keyRef, key = null, value = null) {
             qr,
             (snapshot) => {
                 setDocument(snapshot.docs.map((transac) => ({ ...transac.data(), id: transac.id })));
-                dispatch({ type: "ADD_DOCUMENTS", payLoad: snapshot.docs.map((transac) => ({ ...transac.data(), id: transac.id })) });
+                // dispatch({ type: "ADD_DOCUMENTS", payLoad: snapshot.docs.map((transac) => ({ ...transac.data(), id: transac.id })) });
                 // update state error
                 setError(null);
             },

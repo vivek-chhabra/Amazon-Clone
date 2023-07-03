@@ -3,6 +3,7 @@ import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { doc, setDoc } from "firebase/firestore";
 import { auth, db } from "../firebase/config";
+import { useCollection } from "./useCollection";
 
 export function useLogOut() {
     const [error, setError] = useState(null);
@@ -13,6 +14,9 @@ export function useLogOut() {
     // auth context
     const { user } = useContext(AuthContext);
 
+    // useCollection hook
+    const { document } = useCollection("users");
+
     const logOut = async () => {
         setError(null);
         setIsPending(true);
@@ -20,8 +24,8 @@ export function useLogOut() {
         // sign the user out
         try {
             // changes at user collection if user logs out
-            const colRef = doc(db, "user", `${user.uid}`); // collection ref
-            await setDoc(colRef, { name: user.displayName, photoURL: user.photoURL, online: false });
+            const colRef = doc(db, "users", `${user.uid}`); // collection ref
+            await setDoc(colRef, { name: user.displayName, photoURL: user.photoURL, online: false, email: auth.currentUser.email, number: auth.currentUser.phoneNumber });
 
             // logging out the user
             await signOut(auth);

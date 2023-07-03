@@ -1,13 +1,32 @@
-import "./App.css";
+import ProductDetails from "./pages/product details/ProductDetails";
+import { Navigate, Route, Routes } from "react-router-dom";
+import PageNotFound from "./components/PageNotFound";
+import { AuthContext } from "./context/AuthContext";
+import SellProduct from "./pages/sell/SellProduct";
+import Signup from "./pages/signup/Signup";
 import Navbar from "./components/Navbar";
 import Login from "./pages/login/Login";
+import Home from "./pages/home/Home";
+import { useContext } from "react";
+import "./App.css";
 
 function App() {
+    const { isAuthReady, user } = useContext(AuthContext);
+
     return (
-        <div className="App">
-            <Navbar />
-            {/* <Login /> */}
-        </div>
+        isAuthReady && (
+            <div className="App" style={user ? {paddingBottom: '40px'} : {paddingBottom: '0px'}}>
+                <Navbar />
+                <Routes>
+                    <Route path="/" element={user ? <Home /> : <Navigate to={"/signin"} />} />
+                    <Route path="/signin" element={user ? <Navigate to={"/"} /> : <Login />} />
+                    <Route path="/signup" element={user ? <Navigate to={"/"} /> : <Signup />} />
+                    <Route path="/product/:id" element={user ? <ProductDetails /> : <Navigate to={"/signin"} />} />
+                    <Route path="/add-product" element={user ? <SellProduct/> : <Navigate to={'/signin'}/>} />
+                    <Route path="*" element={<PageNotFound />} />
+                </Routes>
+            </div>
+        )
     );
 }
 

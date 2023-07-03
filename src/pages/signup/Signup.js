@@ -3,8 +3,8 @@ import { useToggle } from "../../hooks/useToggle";
 import { useInput } from "../../hooks/useInput";
 import { NavLink } from "react-router-dom";
 import { ErrorMsg } from "../../helpers";
+import React, { useState } from "react";
 import "../login/Login.css";
-import React from "react";
 
 export default function Signup() {
     // useInput hook
@@ -13,6 +13,7 @@ export default function Signup() {
     const [email, updateEmail] = useInput("");
     const [password, updatePassword] = useInput("");
     const [confirmPass, updateConfirmPass] = useInput("");
+    const [passwordErr, setPasswordErr] = useState("");
 
     // useToggle hook
     const [showPassword, toggleShowPassword] = useToggle(false);
@@ -23,14 +24,30 @@ export default function Signup() {
     // signup form submit
     const handleSubmit = (e) => {
         e.preventDefault();
+        setPasswordErr(null);
+
+        // checking if the confirmed password is metching or not
+        if (password !== confirmPass) {
+            setPasswordErr("Check Your Password");
+            return;
+        }
 
         // signing up the user
         signUp();
     };
+
+    const throwErr = () => {
+        if(passwordErr) {
+            return <ErrorMsg error={passwordErr} />
+        } else if (error) {
+            return <ErrorMsg error={error} />
+        }
+    }
     return (
         <div className="Login flex-column Signup">
-            {error && <ErrorMsg error={error} />}
-            <form className="flex-column" onSubmit={handleSubmit} style={error ? { marginTop: "30px" } : { marginTop: "0px" }}>
+            {throwErr()}
+
+            <form className="flex-column" onSubmit={handleSubmit} style={error || passwordErr ? { marginTop: "30px" } : { marginTop: "0px" }}>
                 <p>Sign-up</p>
                 <div className="mb-0 flex name">
                     <div className="first-name">
@@ -76,7 +93,7 @@ export default function Signup() {
                     </button>
                 ) : (
                     <button type="submit" className="btn btn-primary">
-                        Submit
+                        Continue
                     </button>
                 )}
                 <hr />

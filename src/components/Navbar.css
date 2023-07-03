@@ -6,6 +6,9 @@
     background-color: #121920;
     color: white;
     justify-content: space-between;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
 }
 
 .Navbar img {
@@ -21,14 +24,16 @@
 
 .Navbar form select {
     height: 100%;
-    width: 50px;
+    width: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 5px 0 0 5px;
     border: none;
     font-weight: 600;
-    background-color: rgb(178, 178, 178);
+    background-color: rgb(211, 211, 211);
+    font-size: 85%;
+    padding-left: 2px;
 }
 
 form .search-box {
@@ -38,6 +43,11 @@ form .search-box {
     border: none;
     border-radius: 0px !important;
     padding-inline: 10px;
+}
+
+form .search-box::placeholder {
+    font-weight: 600;
+    color: rgb(121, 121, 121);
 }
 
 form .icon {
@@ -63,6 +73,10 @@ form .icon:hover {
 
 .links {
     gap: 30px;
+}   
+
+.links .active {
+    color: #ffaa42;
 }
 
 .links span {

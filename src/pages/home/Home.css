@@ -1,0 +1,103 @@
+.Home {
+    width: 100%;
+}
+
+.slider {
+    width: 100%;
+    height: 100vh;
+    margin-bottom: -450px;
+    object-fit: cover;
+}
+
+.Home .slider img {
+    width: 100%;
+    z-index: -2;
+    mask-image: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0.347));
+}
+
+.Home .products {
+    gap: 20px;
+    padding-inline: 30px;
+}
+
+.Home .products .row {
+    gap: 20px;
+}
+
+.Home .products .row .col {
+    min-width: 280px;
+    flex: 1;
+    padding: 20px 20px;
+    column-gap: 10px;
+    row-gap: 15px;
+    background-color: white;
+    flex-wrap: wrap;
+}
+
+.row .col .head {
+    font-size: 120%;    
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.row .col .single-img {
+    width: 100%;
+    height: 300px;
+}
+
+.row .col img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.row .col .categories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    row-gap: 40px;
+    flex-wrap: wrap;
+}
+
+.categories .cate img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.categories .cate p {
+    font-size: 80%;
+}
+
+.row .navLink{
+    font-size: 90%;
+    font-weight: 600;
+    color: #007185;
+    margin-top: auto;
+}
+
+.row .navLink:hover {
+    color: red;
+}
+
+.products #row-4 #col-4 {
+    height: 100px;
+    padding-bottom: 100px;
+}
+
+.products #row-4 #col-4 .navLink {
+    height: 30px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #FED815;
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.products #row-4 #col-4 .navLink:hover{
+    background-color: #ffcc00;
+}
+

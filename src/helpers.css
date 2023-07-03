@@ -64,3 +64,8 @@
     font-family: "Poppins", sans-serif;
     margin-right: 10px;
 }
+.error button,
+.success button,
+.primary button {
+    padding-bottom: 10px !important;
+}

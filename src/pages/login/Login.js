@@ -25,8 +25,8 @@ export default function Login() {
 
     return (
         <div className="Login flex-column">
-            {!error && <ErrorMsg error={error} />}
-            <form className="flex-column" onSubmit={handleSubmit} style={!error && { marginTop: "30px" }}>
+            {error && <ErrorMsg error={error} />}
+            <form className="flex-column" onSubmit={handleSubmit} style={error ? { marginTop: "30px" } : { marginTop: "0px" }}>
                 <p>Sign-in</p>
                 <div className="mb-0">
                     <label htmlFor="email" className="form-label">
@@ -52,7 +52,7 @@ export default function Login() {
                     </button>
                 ) : (
                     <button type="submit" className="btn btn-primary">
-                        Submit
+                        Continue
                     </button>
                 )}
                 <div className="signin-msg">By signing-in you agree to the AMAZON CLONE Conditions of Use & Sale. Please go through our Privacy Notice, our Cookies Notice and our Interest-Based Notice.</div>

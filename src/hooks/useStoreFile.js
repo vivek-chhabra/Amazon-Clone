@@ -5,17 +5,18 @@ import { useState } from "react";
 export function useStoreFile() {
     const [error, setError] = useState(null);
     const [isPending, setIsPending] = useState(false);
+    const [url, setUrl] = useState([]);
 
     const uploadFile = async (path, fileObj) => {
-        let url;
+        let URL;
         try {
             let res = await uploadBytes(ref(storage, path), fileObj);
-            url = await getDownloadURL(ref(storage, path));
+            URL = await getDownloadURL(ref(storage, path));
+            setUrl([...url, URL]);
         } catch (err) {
             console.log(err.message);
             setError(err.message);
         }
-        return url;
     };
-    return { error, isPending, uploadFile };
+    return { error, isPending, uploadFile, url };
 }

@@ -28,8 +28,8 @@ function useSignUpAuth(firstName, lastName, email, password) {
             //updating user's name
             await updateProfile(auth.currentUser, { displayName: `${firstName} ${lastName}` });
 
-            const colRef = doc(db, "user", `${auth.currentUser.uid}`); // collection ref
-            console.log(auth)
+            const colRef = doc(db, "users", `${auth.currentUser.uid}`); // collection ref
+
             // creating a user document at firestore db
             await setDoc(colRef, { name: auth.currentUser.displayName, photoURL: auth.currentUser.photoURL, online: true, email: auth.currentUser.email, number: auth.currentUser.phoneNumber });
 
