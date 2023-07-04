@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import "./Home.css";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
+import Recommendation from "../../components/Recommendation";
+import Footer from "../../components/Footer";
 
 export default function Home() {
     const { user } = useContext(AuthContext);
@@ -63,12 +65,22 @@ export default function Home() {
                         </div>
                         <NavLink className={"navLink"}>See More</NavLink>
                     </div>
-                    <div className="col" id="col-4">
-                        <p className="head">Sign in for your best experience</p>
-                        <NavLink className={"navLink"} to={"/singin"}>
-                            Sign in Securely
-                        </NavLink>
-                    </div>
+                    {user ? (
+                        <div className="col flex-column" id="col-2">
+                            <p className="head">New Series CRUSHED | Watch FREE on miniTV</p>
+                            <div className="single-img">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img17/Home/AmazonTV/Ravina/Desktop/DeskCC-379x304_CRUSHED-S2_V2._SY304_CB620412632_.jpg" alt="" />
+                            </div>
+                            <NavLink className={"navLink"}>Watch for FREE | miniTV</NavLink>
+                        </div>
+                    ) : (
+                        <div className="col" id="col-4">
+                            <p className="head">Sign in for your best experience</p>
+                            <NavLink className={"navLink"} to={"/signin"}>
+                                Sign in Securely
+                            </NavLink>
+                        </div>
+                    )}
                 </div>
                 <div className="row flex" id="row-2">
                     <div className="col flex-column" id="col-2">
@@ -176,9 +188,7 @@ export default function Home() {
                             <div className="single-img">
                                 <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img19/Sports/GW_Desktop/1199101_379x304_Compressed._SY304_CB448278349_.jpg" alt="" />
                             </div>
-                            <NavLink className={"navLink"}>
-                                See More
-                            </NavLink>
+                            <NavLink className={"navLink"}>See More</NavLink>
                         </div>
                     )}
                     <div className="col flex-column" id="col-3">
@@ -205,6 +215,8 @@ export default function Home() {
                     </div>
                 </div>
             </div>
+            {!user && <Recommendation />}
+            <Footer />
         </div>
     );
 }

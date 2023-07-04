@@ -45,7 +45,7 @@ export default function Navbar() {
                 <div className="links flex">
                     {user ? (
                         <NavLink className={"link"}>
-                            <span className="small-text">Hello, {user.displayName.split(' ')[0]}</span>
+                            <span className="small-text">Hello, {user.displayName.split(" ")[0]}</span>
                             <span className="big-text">Accounts & Lists</span>
                         </NavLink>
                     ) : (
@@ -62,10 +62,12 @@ export default function Navbar() {
                         <span className="small-text">Your</span>
                         <span className="big-text">Prime</span>
                     </NavLink>
-                    <NavLink to={"/add-product"} className={"link"}>
-                        <span className="small-text">Sell</span>
-                        <span className="big-text">Product</span>
-                    </NavLink>
+                    {user && (
+                        <NavLink to={"/add-product"} className={"link"}>
+                            <span className="small-text">Sell</span>
+                            <span className="big-text">Product</span>
+                        </NavLink>
+                    )}
                     {user &&
                         (isPending ? (
                             <NavLink className={"link"}>

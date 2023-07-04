@@ -1,0 +1,47 @@
+.Recommendation {
+    width: 98%;
+    margin-inline: auto;
+    text-align: center;
+    margin-top: 40px;
+    gap: 5px;
+    background-color: white;
+    padding-block: 40px;
+    border-radius: 10px;
+}
+
+.Recommendation p,.Recommendation p span {
+    scale: .9;
+    margin-inline: auto;
+}
+
+.Recommendation button {
+    background-color: #FEC83F;
+    color: black;
+    border: 2px solid #fec83f00;
+    font-weight: 600;
+    padding: 3px;
+    width: 250px;
+    margin-inline: auto;
+}
+
+.Recommendation button:hover {
+    background-color: #ffb700;
+    border: 2px solid #fec83f00;
+    color: black;
+}
+
+.Recommendation button:active {
+    background-color: #FEC83F !important;
+    color: black !important;
+    border: 2px solid #ff933b00 !important;
+}
+
+.Recommendation a {
+    color: rgb(25, 161, 116);
+    font-weight: 600;
+}
+
+.Recommendation a:hover {
+    color: red;
+}
+

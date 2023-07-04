@@ -7,6 +7,7 @@
     align-items: flex-start;
     gap: 60px;
     padding-left: 170px;
+    background-color: white;
 }
 
 .error404 {

@@ -18,7 +18,7 @@ function App() {
             <div className="App" style={user ? {paddingBottom: '40px'} : {paddingBottom: '0px'}}>
                 <Navbar />
                 <Routes>
-                    <Route path="/" element={user ? <Home /> : <Navigate to={"/signin"} />} />
+                    <Route path="/" element={<Home />} />
                     <Route path="/signin" element={user ? <Navigate to={"/"} /> : <Login />} />
                     <Route path="/signup" element={user ? <Navigate to={"/"} /> : <Signup />} />
                     <Route path="/product/:id" element={user ? <ProductDetails /> : <Navigate to={"/signin"} />} />

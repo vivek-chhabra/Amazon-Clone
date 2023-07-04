@@ -2,14 +2,17 @@ import { useLoginAuth } from "../../hooks/useLoginAuth";
 import { useToggle } from "../../hooks/useToggle";
 import { useInput } from "../../hooks/useInput";
 import { ErrorMsg } from "../../helpers";
-import React from "react";
+import React, { useContext } from "react";
 import "./Login.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
 
 export default function Login() {
     // useInput hook
     const [email, updateEmail] = useInput("");
     const [password, updatePassword] = useInput("");
+
+    const { user } = useContext(AuthContext);
 
     // useToggle hook
     const [showPassword, toggleShowPassword] = useToggle(false);
@@ -20,6 +23,7 @@ export default function Login() {
     // form submission
     const handleSubmit = (e) => {
         e.preventDefault();
+        console.log(email, password);
         login();
     };
 

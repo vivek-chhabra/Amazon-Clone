@@ -1,0 +1,122 @@
+.Footer {
+    width: 100%;
+    background-color: #232e3f;
+    margin-top: 40px ;
+}
+
+.Footer .back-to-top {
+    text-align: center;
+    padding: 15px;
+    font: 600;
+    font-size: 80%;
+    color: white;
+    background-color: #37475a;
+    transition: all 0s;
+}
+
+.Footer .back-to-top:hover {
+    background-color: #485769;
+    cursor: pointer;
+}
+
+.Footer .links {
+    background-color: #232e3f;
+    color: white;
+}
+
+.Footer .container {
+    max-width: 1100px;
+    padding: 40px 30px;
+}
+
+.Footer .container .col p {
+    color: #b5c1ce;
+    font-size: 90%;
+}
+
+.Footer .container .col p:hover {
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.Footer .container .col .head {
+    color: #ffffff;
+    font-size: 110%;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.Footer .countries {
+    background-color: #232e3f;
+    max-width: 1000px;
+    justify-content: center;
+    align-items: center;
+    margin-inline: auto;
+}
+
+.Footer hr {
+    color: white;
+}
+
+.Footer .countries img {
+    width: 100px;
+    margin-inline: auto;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.Footer .countries .links p {
+    font-size: 80%;
+    white-space: pre;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.Footer .countries .links p:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.additional-links {
+    background-color: #121a23;
+    margin-top: 40px;
+}
+
+.Footer .additional-links .container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.Footer .additional-links .container .col {
+    white-space: pre;
+    font-size: 80%;
+}
+
+.Footer .additional-links .col span {
+    color: #728194;
+}
+
+.bottom {
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 80%;
+    margin-bottom: 20px;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom .links {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.bottom .links p:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}

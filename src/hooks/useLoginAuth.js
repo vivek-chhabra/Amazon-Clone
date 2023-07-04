@@ -24,10 +24,11 @@ export function useLoginAuth(email, password) {
 
             // changing the user collection at db as user logs in
             const colRef = doc(db, "users", `${auth.currentUser.uid}`); // collection ref
-            await setDoc(colRef, { name: auth.currentUser.displayName, photoURL: auth.currentUser.photoURL, online: true, email: user.email, number: user.phoneNumber });
+            await setDoc(colRef, { name: auth.currentUser.displayName, photoURL: auth.currentUser.photoURL, online: true, email: auth?.currentUser?.email, number: auth?.currentUser?.phoneNumber });
 
             // dispatch login action
             dispatch({ type: "LOGIN", payLoad: res.user });
+            console.log("response", res.user);
 
             // won't run if the corresponding component gets unmounted
             if (!isCancelled) {
