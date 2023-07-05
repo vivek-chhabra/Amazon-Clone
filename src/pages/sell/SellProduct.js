@@ -64,7 +64,7 @@ export default function SellProduct() {
         pColor,
         ratings: randNum(10, 10000),
         pDeliveryDur,
-        pFeatures: pFeatures.split("$"),
+        pFeatures: pFeatures.split("$").filter(fet => fet != '' || fet != ' '),
         pWeight,
         pWarrenty,
         percentOff: numDivisibleBy(70, 40, 2),

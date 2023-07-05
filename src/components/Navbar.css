@@ -73,7 +73,7 @@ form .icon:hover {
 
 .links {
     gap: 30px;
-}   
+}
 
 .links .active {
     color: #ffaa42;
@@ -126,6 +126,5 @@ form .icon:hover {
     justify-content: center;
     align-items: center;
     font-weight: 700;
-    bottom: 18px;
-    left: 7px;
+    right: 10px;
 }

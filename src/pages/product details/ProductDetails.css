@@ -241,3 +241,9 @@
     width: 90%;
 }
 
+.ProductDetails .bottom #row-2 .product-features ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+

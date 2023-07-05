@@ -153,7 +153,6 @@ export default function ProductDetails() {
                         <div className="product-features">
                             <ul>
                                 {state.pFeatures
-                                    .filter((feature) => feature !== "")
                                     .map((feature) => (
                                         <li>{feature}</li>
                                     ))}

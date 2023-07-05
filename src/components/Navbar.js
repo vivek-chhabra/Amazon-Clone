@@ -1,6 +1,6 @@
 import { AuthContext } from "../context/AuthContext";
 import logo from "../assets/PngItem_12080.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { auth } from "../firebase/config";
 import React, { useContext } from "react";
 import "./Navbar.css";
@@ -18,12 +18,14 @@ export default function Navbar() {
     // useLogOut hook
     const { error, isPending, logOut } = useLogOut();
 
+    // useCollection hook
+    const navigate = useNavigate();
+    const { error: cartErr, document } = useCollection(`cart`, `uid`, `${auth?.currentUser?.uid}`);
+
     // handeling logout
     const handleLogout = () => {
         logOut();
     };
-
-    const { document, error: collErr } = useCollection("users");
 
     return (
         <>
@@ -82,10 +84,10 @@ export default function Navbar() {
                                 </span>
                             </NavLink>
                         ))}
-                    <NavLink to={"/cart"} className={"cart"}>
+                    <div onClick={() => navigate("/cart", { state: { document, cartErr } })} className={"cart pointer"}>
                         <i className="fa-solid fa-cart-shopping"></i>
-                        <div className="no-of-items">3</div>
-                    </NavLink>
+                        <div className="no-of-items">{document.length}</div>
+                    </div>
                 </div>
             </div>
             {error && <ErrorMsg error={error} />}
