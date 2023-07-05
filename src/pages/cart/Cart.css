@@ -1,0 +1,30 @@
+/* .Cart {
+    padding: 20px;
+    width: 100%;
+}
+
+.Cart .empty-cart {
+    width: 100%;
+    padding: 40px 30px;
+    background-color: white;
+}   
+
+.Cart .empty-cart .head {
+    font-size: 180%;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.Cart .empty-cart .pointer {
+    font-weight: 600;
+}
+
+.Cart .empty-cart .pointer:hover {
+    cursor: pointer !important;
+    color: red !important;
+    text-decoration: underline;
+}
+
+.Cart .empty-cart .cart-msg {
+    width: 70%;
+} */

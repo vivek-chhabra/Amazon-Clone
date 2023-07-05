@@ -1,0 +1,243 @@
+.ProductDetails {
+    width: 100%;
+    background-color: white;
+    padding-inline: 30px;
+    padding-block: 40px;
+    gap: 30px;
+    color: black;
+}
+
+.ProductDetails .left-seciton {
+    width: 40%;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    position: sticky;
+    top: 75px;
+}
+
+.ProductDetails .left-seciton .bigImage {
+    width: 80%;
+    height: 400px;
+    margin-bottom: 100px;
+    padding: 10px;
+}
+
+.ProductDetails .bigImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.ProductDetails .left-seciton .images {
+    gap: 20px;
+    display: flex !important;
+    justify-content: space-evenly !important;
+    flex-wrap: wrap;
+}
+
+.ProductDetails .left-seciton .images img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    padding: 5px;
+    border: 2px solid #aeb9bc;
+}
+
+.ProductDetails .left-seciton .images img:hover {
+    outline: solid #579fb3b4;
+}
+
+/* right section */
+
+.ProductDetails .right-section {
+    padding: 20px;
+    width: 70%;
+}
+
+.ProductDetails .right-section .top .discription {
+    font-size: 140%;
+    font-weight: 600;   
+}
+
+.ProductDetails .right-section .top .link {
+    font-size: 90%;
+    color: #017085;
+    font-weight: 600;
+}
+
+.pointer:hover {
+    cursor: pointer;
+}
+
+.ProductDetails .right-section .top .rating {
+    color: #004f5f;
+    gap: 10px;
+    font-size: 90%;
+}
+
+.ProductDetails .right-section .top .link:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+.ProductDetails .right-section .top box-icon {
+    height: 60%;
+    margin-left: -5px;
+}
+
+.ProductDetails .right-section .middle .price {
+    font-size: 140%;
+    gap: 10px;
+    align-items: center;
+    font-weight: 600;
+}
+
+.right-section .middle .price div {
+    color: red;
+    font-weight: 400;
+}
+
+.right-section .middle .price p {
+    right: 10px;
+}
+
+.right-section .middle .row {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+}
+
+.right-section .middle .row .btns {
+    gap: 25px;
+    margin-block: 15px;
+}
+
+.original-price {
+    font-size: 90%;
+}
+
+.original-price span {
+    text-decoration: line-through;
+    margin-left: 5px;
+    font-weight: 600;
+}
+
+.buy, .add-to-cart {
+    max-width: 250px;
+    width: 100%;
+    border: none;
+    border-radius: 50px;
+    text-align: center;
+    color: black;
+    font-weight: 600;
+    font-size: 90%;
+}
+
+.buy {
+    background-color: #FFA51D;
+}
+
+.buy:hover {
+    background-color: #f19000;
+}
+
+.add-to-cart {
+    background-color: #FFD814;
+}
+
+.add-to-cart:hover {
+    background-color: #f4cc00;
+}
+
+.right-section .middle .row select {
+    width: 60px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.shipping-charge {
+    font-weight: 600;
+    color: rgb(41, 41, 41);
+}
+
+.units-left {
+    font-weight: 600;
+    color: rgb(147, 0, 0);
+}
+
+.ProductDetails #row-2 .head {
+    font-size: 120%;
+    font-weight: 600;
+}
+
+.ProductDetails #row-2 .select {
+    bottom: 7px;    
+    color: rgb(91, 91, 91);
+    font-weight: 600;
+}
+
+.ProductDetails #row-2 .links {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    font-size: 80%;
+    text-align: center;
+    gap: 10px;
+}
+
+#row-2 .links .col {
+    width: 100px !important;
+    color: #004f5f !important;
+    align-items: center;
+    gap: 5px;
+}
+
+.ProductDetails #row-2 .links img {
+    width: 40px;
+    height: 40px;
+}
+
+.ProductDetails .bottom {
+    background-color: white;
+    color: black;
+}
+
+.ProductDetails #row-1 {
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: left ;
+}
+
+.ProductDetails .bottom #row-1 .product-info {
+    font-size: 115%;
+}
+
+.ProductDetails .bottom #row-1 .product-info .item {
+    display: flex !important;
+    gap: 20px; 
+    color: black;
+    font-weight: 600;
+}
+
+.ProductDetails .bottom #row-1 .product-info .item b {
+    min-width: 160px;
+}
+
+.ProductDetails .bottom #row-2 {
+    text-align: left;
+}
+
+.ProductDetails .bottom #row-2 .head {
+    font-size: 150%;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.ProductDetails .bottom #row-2 .product-features {
+    font-weight: 600;
+    font-size: 110%;
+    width: 90%;
+}
+

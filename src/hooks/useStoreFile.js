@@ -13,6 +13,7 @@ export function useStoreFile() {
             let res = await uploadBytes(ref(storage, path), fileObj);
             URL = await getDownloadURL(ref(storage, path));
             setUrl([...url, URL]);
+            return URL
         } catch (err) {
             console.log(err.message);
             setError(err.message);

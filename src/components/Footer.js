@@ -48,22 +48,22 @@ export default function Footer() {
             <div className="countries flex-column">
                 <img src="http://localhost:3000/static/media/PngItem_12080.64a0d895e5f0098d5422.png" alt="" />
                 <div className="links flex">
-                    <p>Australia</p>
-                    <p>Brazil</p>
-                    <p>Canada</p>
-                    <p>China</p>
-                    <p>France</p>
-                    <p>Italy</p>
-                    <p>Japan</p>
-                    <p>Mexico</p>
-                    <p>Netherlands</p>
-                    <p>Poland</p>
-                    <p>Singapore</p>
-                    <p>Spain</p>
-                    <p>Turkey</p>
-                    <p>United Arab Emirates</p>
-                    <p>United Kingdom</p>
-                    <p>United States</p>
+                    <span>Australia</span>
+                    <span>Brazil</span>
+                    <span>Canada</span>
+                    <span>China</span>
+                    <span>France</span>
+                    <span>Italy</span>
+                    <span>Japan</span>
+                    <span>Mexico</span>
+                    <span>Netherlands</span>
+                    <span>Poland</span>
+                    <span>Singapore</span>
+                    <span>Spain</span>
+                    <span>Turkey</span>
+                    <span>United Arab Emirates</span>
+                    <span>United Kingdom</span>
+                    <span>United States</span>
                 </div>
             </div>
             <div className="additional-links flex">
@@ -112,6 +112,61 @@ export default function Footer() {
                         <p>Amazon Prime Music</p>
                         <span>100 million songs, ad-free</span>
                         <span>Over 15 million podcast episodes</span>
+                    </div>
+                    <div className="col flex-column" id="col-10">
+                        <p> DPReview</p>
+                        <span>Digital</span>
+                        <span>Photography</span>
+                    </div>
+                    <div className="col flex-column" id="col-11">
+                        <p>Box Office Mojo</p>
+                        <span>Find Movie</span>
+                        <span>Box Office Data</span>
+                    </div>
+                    <div className="col flex-column" id="col-12">
+                        <p> Goodreads</p>
+                        <span>Book reviews</span>
+                        <span>& recommendation</span>
+                    </div>
+                    <div className="col flex-column" id="col-13">
+                        <p>Zappos</p>
+                        <span>Shoes &</span>
+                        <span>Clothing</span>
+                    </div>
+                    <div className="col flex-column" id="col-14">
+                        <p>Ring</p>
+                        <span>Smart Home</span>
+                        <span>Security Systems</span>
+                    </div>
+                    <div className="col flex-column" id="col-15">
+                        <p>Woot!</p>
+                        <span>Deals and</span>
+                        <span>Shenanigans</span>
+                    </div>
+                    <div className="col flex-column" id="col-16">
+                        <p>Shopbop</p>
+                        <span>Designer</span>
+                        <span>Fashion Brands</span>
+                    </div>
+                    <div className="col flex-column" id="col-17">
+                        <p> eero WiFi</p>
+                        <span>Stream 4K Video</span>
+                        <span>in Every Room</span>
+                    </div>
+                    <div className="col flex-column" id="col-18">
+                        <p>Blink</p>
+                        <span>Smart Security</span>
+                        <span>for Every Home</span>
+                    </div>
+                    <div className="col flex-column" id="col-19">
+                        <p>AmazonGlobal</p>
+                        <span>Ship Orders</span>
+                        <span>Internationally</span>
+                    </div>
+                    <div className="col flex-column" id="col-20">
+                        <p>PillPack</p>
+                        <span>Pharmacy</span>
+                        <span>Simplified</span>
                     </div>
                 </div>
             </div>

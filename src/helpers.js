@@ -13,6 +13,16 @@ function randBool() {
     return randNum(1) == 1 ? true : false;
 }
 
+function numDivisibleBy(max, min, num) {
+    for (; true; ) {
+        let rand = Math.floor(Math.random() * (max + 1 - min)) + min;
+        if (rand % num === 0) {
+            return rand;
+        }
+    }
+}
+
+
 // this method takes a string and returns a capitalized version of the string
 function capitalize(string) {
     let newStr = "";
@@ -66,4 +76,4 @@ function PrimaryMsg({ msg }) {
     );
 }
 
-export { randNum, displayFlex, randBool, capitalize, ErrorMsg, SuccessMsg, PrimaryMsg, removeEle, replaceEle };
+export { randNum, displayFlex, randBool, capitalize, ErrorMsg, numDivisibleBy, SuccessMsg, PrimaryMsg, removeEle, replaceEle };

@@ -4,7 +4,7 @@ import { useStoreFile } from "../../hooks/useStoreFile";
 import React, { useEffect, useState } from "react";
 import { useInput } from "../../hooks/useInput";
 import { auth } from "../../firebase/config";
-import { ErrorMsg, PrimaryMsg, SuccessMsg } from "../../helpers";
+import { ErrorMsg, PrimaryMsg, SuccessMsg, numDivisibleBy, randNum } from "../../helpers";
 import "./SellProduct.css";
 
 export default function SellProduct() {
@@ -19,6 +19,8 @@ export default function SellProduct() {
     const [pWeight, updatePWeight, resetPWeight] = useInput("");
     const [pWarrenty, updatePWarrenty, resetPWarrenty] = useInput("");
     const [formErr, setFormErr] = useState(null);
+    const [arr, setArr] = useState("");
+    const [images, setImages] = useState(null);
 
     // useFirestore hook
     const { addDocument, response } = useFirestore();
@@ -29,25 +31,45 @@ export default function SellProduct() {
 
     const handleFileInput = async (e) => {
         let selected = e.target.files;
-
+        // setImages(Object.values(selected).length);
+        let urlArr = [];
         setFormErr(null);
 
-        Object.values(selected).forEach((file) => {
-            if (!file.type.includes("image")) {
+        let selectedArr = Object.values(selected);
+        for (let i = 0; i < selectedArr.length; i++) {
+            if (!selectedArr[i].type.includes("image")) {
                 setFormErr("Selected Files Should be an Image Type");
-            } else if (file.size > 300000) {
+                return;
+            } else if (selectedArr[i].size > 300000) {
                 setFormErr("File Size Should Not Be Higher Than 300KBs");
                 window.scrollTo(0, 0);
                 return;
             }
-        });
+        }
+
         await Object.values(selected).forEach(async (file) => {
-            await uploadFile(`productImages/${auth?.currentUser?.uid}/${file.name}`, file);
+            let res = await uploadFile(`productImages/${auth?.currentUser?.uid}/${file.name}`, file);
+            urlArr.push(res);
         });
+        setArr(urlArr);
     };
 
     // product object to be stored at the database
-    const product = { pName, pPrice, pBrand, pImage: url, pColor, pDeliveryDur, pFeatures: pFeatures.split(','), pWeight, pWarrenty, createdBy: { name: auth?.currentUser?.displayName, uid: auth?.currentUser?.uid, photoURL: auth?.currentUser?.photoURL } };
+    const product = {
+        pName,
+        pPrice,
+        pBrand,
+        pImage: arr,
+        pDiscription,
+        pColor,
+        ratings: randNum(10, 10000),
+        pDeliveryDur,
+        pFeatures: pFeatures.split("$"),
+        pWeight,
+        pWarrenty,
+        percentOff: numDivisibleBy(70, 40, 2),
+        createdBy: { name: auth?.currentUser?.displayName, uid: auth?.currentUser?.uid, photoURL: auth?.currentUser?.photoURL },
+    };
 
     // handling the submission product form
     const handleSubmit = (e) => {
@@ -63,8 +85,6 @@ export default function SellProduct() {
         // adding doc if there is no error
         addDocument("products", product);
     };
-
-    console.log(document);
 
     const throwErr = () => {
         if (formErr) {
@@ -86,11 +106,12 @@ export default function SellProduct() {
             resetPDeliveryDur();
             resetPWeight();
             resetPWarrenty();
+            setImages(null);
         }
-        if (error || formErr) {
+        if (error || formErr || isPending) {
             window.scrollTo(0, 0);
         }
-    }, [success, error, formErr]);
+    }, [success, error, formErr, isPending]);
 
     return (
         <div className="SellProduct flex-column">
@@ -139,12 +160,12 @@ export default function SellProduct() {
                         <label htmlFor="p-img" className="form-label">
                             Select Product Images :
                         </label>
-                        <input type="file" required multiple onChange={handleFileInput} className="shadow-none form-control" id="p-img" />
+                        <input type="file" value={images} required multiple onChange={handleFileInput} className="shadow-none form-control" id="p-img" />
                     </div>
                     <div className="mb-0 info" id="row-5">
                         <label htmlFor="feature">Product Features : </label>
                         <div className="form-floating">
-                            <textarea className="form-select shadow-none" placeholder="Divide features by a comma" value={pFeatures} onChange={updatePFeatures} id="feature" style={{ height: "100px" }}></textarea>
+                            <textarea className="form-select shadow-none" placeholder="Divide features by a Dollar Character" value={pFeatures} onChange={updatePFeatures} id="feature" style={{ height: "100px" }}></textarea>
                         </div>
                     </div>
                     <div className="info flex" id="row-6">
