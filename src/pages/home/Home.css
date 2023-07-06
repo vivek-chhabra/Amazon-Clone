@@ -81,12 +81,12 @@
     color: red;
 }
 
-.products #row-4 #col-4 {
+.products .row #signIn {
     height: 100px;
     padding-bottom: 100px;
 }
 
-.products #row-4 #col-4 .navLink {
+.products .row #signIn .navLink {
     height: 30px;
     width: 100%;
     border-radius: 10px;

@@ -28,7 +28,33 @@ export default function Home() {
     return (
         <div className="Home flex-column">
             <div className="slider">
-                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/prime/PD23/ACQ/hero/v2/PC_Hero_3000x1200_2X_EN._CB600991698_.jpg" alt="" />
+                <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
+                    <div className="carousel-inner">
+                        <div className="carousel-item" data-bs-interval="5000">
+                            <img src="https://m.media-amazon.com/images/I/71Ie3JXGfVL._SX3000_.jpg" className="d-block w-100" alt="..." />
+                        </div>
+                        <div className="carousel-item active" data-bs-interval="5000">
+                            <img src="https://m.media-amazon.com/images/I/71U-Q+N7PXL._SX3000_.jpg" className="d-block w-100" alt="..." />
+                        </div>
+                        <div className="carousel-item active" data-bs-interval="5000">
+                            <img src="https://m.media-amazon.com/images/I/81KkrQWEHIL._SX3000_.jpg" className="d-block w-100" alt="..." />
+                        </div>
+                        <div className="carousel-item" data-bs-interval="200">
+                            <img src="https://m.media-amazon.com/images/I/61zAjw4bqPL._SX3000_.jpg" className="d-block w-100" alt="..." />
+                        </div>
+                        <div className="carousel-item" data-bs-interval="5000">
+                            <img src="https://m.media-amazon.com/images/I/61lwJy4B8PL._SX3000_.jpg" className="d-block w-100" alt="..." />
+                        </div>
+                    </div>
+                    <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span className="visually-hidden">Previous</span>
+                    </button>
+                    <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span className="visually-hidden">Next</span>
+                    </button>
+                </div>
             </div>
             <div className="products flex-column">
                 {error && <ErrorMsg error={error} />}
@@ -95,7 +121,7 @@ export default function Home() {
                                     <NavLink className={"navLink"}>Watch for FREE | miniTV</NavLink>
                                 </div>
                             ) : (
-                                <div className="col" id="col-4">
+                                <div className="col" id="signIn">
                                     <p className="head">Sign in for your best experience</p>
                                     <NavLink className={"navLink"} to={"/signin"}>
                                         Sign in Securely
