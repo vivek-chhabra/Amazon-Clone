@@ -12,11 +12,8 @@ export default function Product({ productInfo }) {
                 <img src={productInfo.pImage[0]} alt="" />
             </div>
             <p className="head">
-                {productInfo.pDiscription
-                    .split(" ")
-                    .map((ele) => ele + " ")
-                    .slice(0, 8)}
-                . . .
+                {productInfo.pDiscription.slice(0, 55)}
+                ...
             </p>
             <div className="rating flex" style={{marginBottom: '5px'}}>
                 <div className="stars flex">

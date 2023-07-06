@@ -7,6 +7,7 @@ import { auth } from "../../firebase/config";
 import { ErrorMsg, PrimaryMsg, SuccessMsg, numDivisibleBy, randNum } from "../../helpers";
 import "./SellProduct.css";
 
+
 export default function SellProduct() {
     // states for the product information
     const [pName, UpdatePName, resetPName] = useInput("");
@@ -64,7 +65,7 @@ export default function SellProduct() {
         pColor,
         ratings: randNum(10, 10000),
         pDeliveryDur,
-        pFeatures: pFeatures.split("$").filter(fet => fet != '' || fet != ' '),
+        pFeatures: pFeatures.split("$").filter((fet) => fet != "" || fet != " "),
         pWeight,
         pWarrenty,
         percentOff: numDivisibleBy(70, 40, 2),
@@ -165,7 +166,7 @@ export default function SellProduct() {
                     <div className="mb-0 info" id="row-5">
                         <label htmlFor="feature">Product Features : </label>
                         <div className="form-floating">
-                            <textarea className="form-select shadow-none" placeholder="Divide features by a Dollar Character" value={pFeatures} onChange={updatePFeatures} id="feature" style={{ height: "100px" }}></textarea>
+                            <textarea className="form-select shadow-none" required placeholder="Divide features by a Dollar Character" value={pFeatures} onChange={updatePFeatures} id="feature" style={{ height: "100px" }}></textarea>
                         </div>
                     </div>
                     <div className="info flex" id="row-6">

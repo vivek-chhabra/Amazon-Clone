@@ -22,7 +22,6 @@ function numDivisibleBy(max, min, num) {
     }
 }
 
-
 // this method takes a string and returns a capitalized version of the string
 function capitalize(string) {
     let newStr = "";

@@ -28,7 +28,7 @@ export function useCollection(keyRef, key = null, value = null) {
         const unSub = onSnapshot(
             qr,
             (snapshot) => {
-                setDocument(snapshot.docs.map((transac) => ({ ...transac.data(), id: transac.id })));
+                setDocument(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
                 // dispatch({ type: "ADD_DOCUMENTS", payLoad: snapshot.docs.map((transac) => ({ ...transac.data(), id: transac.id })) });
                 // update state error
                 setError(null);

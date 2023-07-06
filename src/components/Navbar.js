@@ -86,7 +86,7 @@ export default function Navbar() {
                         ))}
                     <div onClick={() => navigate("/cart", { state: { document, cartErr } })} className={"cart pointer"}>
                         <i className="fa-solid fa-cart-shopping"></i>
-                        <div className="no-of-items">{document.length}</div>
+                        <div className="no-of-items">{document.reduce((acc, curr) => acc + +curr.pQty, 0)}</div>
                     </div>
                 </div>
             </div>

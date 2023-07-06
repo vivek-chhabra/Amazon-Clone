@@ -1,6 +1,8 @@
 .Cart {
     padding: 20px;
+    padding-bottom: 50px;
     width: 100%;
+    gap: 20px;
 }
 
 .Cart .empty-cart {
@@ -64,52 +66,3 @@
     font-weight: 600;
     color: white;
 }
-
-/* .Cart .item-added .total {
-    background-color: white;
-    padding: 20px 25px;
-    width: 400px;
-    gap: 10px;
-    border-radius: 10px;
-}
-
-.Cart .item-added .total .subtotal {
-    font-weight: 600;
-    font-size: 130%;
-    gap: 10px;
-    margin-bottom: 10px;
-    margin-top: 5px;
-}
-
-.Cart .item-added .total .subtotal span {
-    font-size: 50%;
-    bottom: 8px;
-}
-
-.Cart .item-added .total .proceed,
-.Cart .item-added .total .go-to-cart {
-    width: 100%;
-    padding: 7px 15px;
-    font-size: 80%;
-    background-color: #ffd915;
-    border-radius: 10px;
-    font-weight: 600;
-    text-align: center;
-    outline: solid #1f839500;
-}
-
-.Cart .item-added .total .proceed:hover {
-    background-color: #efc700;
-    outline: solid #efc70063;
-}
-.Cart .item-added .total .go-to-cart:hover {
-    background-color: #ececec;
-    border: 2px #007f96 solid;
-    outline: solid #1f839570;
-}
-
-.Cart .item-added .total .go-to-cart {
-    background-color: #ffffff;
-    border: 2px solid rgb(132, 132, 132);
-    box-shadow: 0px 2px 10px rgb(191, 191, 191);
-} */

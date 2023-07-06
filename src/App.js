@@ -11,6 +11,7 @@ import Home from "./pages/home/Home";
 import { useContext } from "react";
 import "./App.css";
 
+
 function App() {
     const { isAuthReady, user } = useContext(AuthContext);
 
@@ -20,9 +21,11 @@ function App() {
                 <Navbar />
                 <Routes>
                     <Route path="/" element={<Home />} />
+                    <Route path="/Amazon-Clone" element={<Navigate to={"/"} />} />
                     <Route path="/signin" element={user ? <Navigate to={"/"} /> : <Login />} />
                     <Route path="/signup" element={user ? <Navigate to={"/"} /> : <Signup />} />
                     <Route path="/cart" element={<Cart />} />
+                    <Route path="/cart/cartId" element={<Cart />} />
                     <Route path="/product/:id" element={user ? <ProductDetails /> : <Navigate to={"/signin"} />} />
                     <Route path="/add-product" element={user ? <SellProduct /> : <Navigate to={"/signin"} />} />
                     <Route path="*" element={<PageNotFound />} />
