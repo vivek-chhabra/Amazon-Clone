@@ -37,6 +37,15 @@ function capitalize(string) {
     return newStr.trim();
 }
 
+// to currency format
+function currencyFormat(price) {
+    return new Intl.NumberFormat("en-IN", {
+        style: "currency",
+        currency: "INR",
+        maximumFractionDigits: 2,
+    }).format(price);
+}
+
 // to remove the specific element from the array
 function removeEle(array, index) {
     return [...array.slice(0, index), ...array.slice(index + 1)];
@@ -69,10 +78,10 @@ function SuccessMsg({ msg }) {
 function PrimaryMsg({ msg }) {
     return (
         <div className="alert primary alert-primary alert-dismissible fade show" role="alert">
-            <strong>Loading...</strong>, {msg}
+            <strong>Loading</strong> , {msg}
             <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     );
 }
 
-export { randNum, displayFlex, randBool, capitalize, ErrorMsg, numDivisibleBy, SuccessMsg, PrimaryMsg, removeEle, replaceEle };
+export { randNum, displayFlex, currencyFormat, randBool, capitalize, ErrorMsg, numDivisibleBy, SuccessMsg, PrimaryMsg, removeEle, replaceEle };

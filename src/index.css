@@ -5,3 +5,7 @@ p {
 body {
   background-color: #E2E7E6;
 }
+
+.cursor-default {
+  cursor: default;
+}

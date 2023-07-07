@@ -12,7 +12,7 @@
 .Home .slider img {
     width: 100%;
     z-index: -2;
-    mask-image: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0.347));
+    mask-image: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0));
 }
 
 .Home .products {
@@ -36,7 +36,7 @@
 }
 
 .row .col .head {
-    font-size: 120%;    
+    font-size: 120%;
     font-weight: 600;
     margin-bottom: 5px;
 }
@@ -70,7 +70,7 @@
     font-size: 80%;
 }
 
-.row .navLink{
+.row .navLink {
     font-size: 90%;
     font-weight: 600;
     color: #007185;
@@ -90,7 +90,7 @@
     height: 30px;
     width: 100%;
     border-radius: 10px;
-    background-color: #FED815;
+    background-color: #fed815;
     color: rgb(0, 0, 0);
     display: flex;
     align-items: center;
@@ -98,10 +98,11 @@
     margin-top: 20px;
 }
 
-.products #row-4 #col-4 .navLink:hover{
+.products #row-4 #col-4 .navLink:hover {
     background-color: #ffcc00;
 }
 
 .Home .primary {
     margin-inline: 30px;
+    width: 95% !important;
 }

@@ -1,5 +1,5 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { randNum } from "../helpers";
+import { currencyFormat, randNum } from "../helpers";
 import React from "react";
 import "./Product.css";
 
@@ -15,7 +15,7 @@ export default function Product({ productInfo }) {
                 {productInfo.pDiscription.slice(0, 55)}
                 ...
             </p>
-            <div className="rating flex" style={{marginBottom: '5px'}}>
+            <div className="rating flex" style={{ marginBottom: "5px" }}>
                 <div className="stars flex">
                     <box-icon type="solid" color="#FFAA42" name="star"></box-icon>
                     <box-icon type="solid" color="#FFAA42" name="star"></box-icon>
@@ -30,13 +30,14 @@ export default function Product({ productInfo }) {
                 <p>Deal</p>
             </div>
             <div className="price">
-                <box-icon name="rupee"></box-icon>
-                <span>{productInfo.pPrice}</span>
+                <span>{currencyFormat(productInfo.pPrice)}</span>
                 <span className="list-p">
-                    List Price : <b style={{ textDecoration: "line-through" }}>INR {((productInfo.pPrice * 100) / (100 - productInfo.percentOff)).toFixed(2)}</b>
+                    List Price : <b style={{ textDecoration: "line-through" }}> {currencyFormat(((productInfo.pPrice * 100) / (100 - productInfo.percentOff)).toFixed(2))}</b>
                 </span>
             </div>
-            <div className="duration">get the product within {productInfo.pDeliveryDur} days</div>
+            <div className="duration" style={{ fontSize: "90%" }}>
+                get the product within {productInfo.pDeliveryDur} days
+            </div>
         </div>
     );
 }

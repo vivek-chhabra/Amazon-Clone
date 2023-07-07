@@ -116,8 +116,9 @@ form .icon:hover {
 }
 
 .no-of-items {
-    width: 15px;
-    height: 15px;
+    width: 17px;
+    height: 17px;
+    padding-inline: 5px;
     border-radius: 10px;
     color: black;
     background-color: #ffaa42;

@@ -69,7 +69,6 @@ export function useFirestore() {
         // editing document
         try {
             let data = await getDoc(doc(db, refKey, id));
-            
             let res = await updateDoc(doc(db, refKey, id), { ...data.data(), ...object });
 
             dispatch({ type: "ADDED_DOCUMENT", payLoad: res });

@@ -1,7 +1,7 @@
 import { NavLink, useLocation, useNavigate, useParams } from "react-router-dom";
 import "./ProductDetails.css";
 import React, { useState } from "react";
-import { ErrorMsg, capitalize, numDivisibleBy, randNum } from "../../helpers";
+import { ErrorMsg, capitalize, currencyFormat, numDivisibleBy, randNum } from "../../helpers";
 import { useInput } from "../../hooks/useInput";
 import { useFirestore } from "../../hooks/useFirestore";
 import { auth } from "../../firebase/config";
@@ -53,7 +53,23 @@ export default function ProductDetails() {
             }
         }
         addDocument("cart", cartItem);
-        navigate("/cart", { state: { photoURL: state.pImage[0], productAdded: state } });
+        navigate("/cart", { state: { productAdded: state } });
+    };
+
+    // proceeding to payment
+    const prodeedToPay = () => {
+        let available = false;
+        for (let i = 0; i < document.length; i++) {
+            if (state.pName === document[i].pName) {
+                available = true;
+            }
+        }
+        if (available) {
+            navigate("/checkout", { state: [cartItem] });
+        } else {
+            addDocument("cart", cartItem);
+            navigate("/checkout", { state: [cartItem] });
+        }
     };
 
     return (
@@ -89,11 +105,11 @@ export default function ProductDetails() {
                         <hr />
                         <div className="row" id="row-1">
                             <div className="price flex">
-                                <div>-{state.percentOff}%</div> <span style={{ fontSize: "60%", fontWeight: "600", bottom: "5px" }}>INR</span>
-                                <p>{state.pPrice}</p>
+                                <div>-{state.percentOff}%</div> <span style={{ fontSize: "60%", fontWeight: "600", bottom: "5px" }}></span>
+                                <p>{currencyFormat(state.pPrice)}</p>
                             </div>
                             <div className="original-price flex">
-                                Typical Price : <span>INR {((state.pPrice * 100) / (100 - state.percentOff)).toFixed(2)}</span>
+                                Typical Price : <span> {currencyFormat((state.pPrice * 100) / (100 - state.percentOff))}</span>
                             </div>
                             <div className="shipping-charge">INR {+state.pPrice + +numDivisibleBy(100, 40, 10)} is the effective amount after including shipping charges and GST</div>
                             <div className="btns flex">
@@ -105,7 +121,9 @@ export default function ProductDetails() {
                                 <button className="add-to-cart" onClick={AddToCart}>
                                     Add to Cart
                                 </button>
-                                <button className="buy">Buy Now</button>
+                                <button className="buy" onClick={prodeedToPay}>
+                                    Buy Now
+                                </button>
                             </div>
                             <div className="units-left">Only {randNum(20, 5)} units are left in stock - order soon</div>
                         </div>

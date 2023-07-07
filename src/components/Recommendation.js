@@ -7,7 +7,7 @@ export default function Recommendation() {
     return (
         <div className="Recommendation flex-column">
             <p>See personalized recommendations</p>
-            <button className="btn btn-primary" onClick={() => navigate("/signup")}>
+            <button className="btn btn-primary" onClick={() => navigate("/signin")}>
                 Sign in
             </button>
             <p className="start-here flex">

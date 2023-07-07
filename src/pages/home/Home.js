@@ -14,15 +14,12 @@ export default function Home() {
 
     // useCollection hook
     const { error, isPending, document } = useCollection("products");
-
-    if (isPending) {
+    if (document.length === 0) {
         return (
             <div className="Home">
-                <PrimaryMsg msg={"Loading Documents..."} />
+                <PrimaryMsg msg={"Documents Beign Loaded"} />
             </div>
         );
-    } else if (document.length === 0) {
-        return <></>;
     }
 
     return (
@@ -33,11 +30,23 @@ export default function Home() {
                         <div className="carousel-item" data-bs-interval="5000">
                             <img src="https://m.media-amazon.com/images/I/71Ie3JXGfVL._SX3000_.jpg" className="d-block w-100" alt="..." />
                         </div>
-                        <div className="carousel-item active" data-bs-interval="5000">
-                            <img src="https://m.media-amazon.com/images/I/71U-Q+N7PXL._SX3000_.jpg" className="d-block w-100" alt="..." />
+                        <div className="carousel-item" data-bs-interval="5000">
+                            <img src="https://m.media-amazon.com/images/I/61aURrton0L._SX3000_.jpg" className="d-block w-100" alt="..." />
+                        </div>
+                        <div className="carousel-item" data-bs-interval="5000">
+                            <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Softlines_JWL_SH_GW_Assets/July_23/MFD/Unrec/Shoes/3000_shoes._CB601250574_.jpg" className="d-block w-100" alt="..." />
+                        </div>
+                        <div className="carousel-item" data-bs-interval="5000">
+                            <img src="https://images-eu.ssl-images-amazon.com/images/G/31/vendorcentral/supporthub/trainingCourses/learningPaths/5300-Kitchen---Water-bottles--Lunch-box--hero-v2-3000-x-1200-_Under_1._CB601243436_.jpg" className="d-block w-100" alt="..." />
+                        </div>
+                        <div className="carousel-item" data-bs-interval="5000">
+                            <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Consumables/SVD/July/Hero/PC_tall_Hero_SVD_UNREC_BOB_3000x1200._CB601321325_.jpg" className="d-block w-100" alt="..." />
+                        </div>
+                        <div className="carousel-item" data-bs-interval="5000">
+                            <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Wireless/Shreyansh/BAU/Unrexc/D70978891_INWLD_BAU_Unrec_Uber_PC_Hero_3000x1200._CB594707876_.jpg" className="d-block w-100" alt="..." />
                         </div>
                         <div className="carousel-item active" data-bs-interval="5000">
-                            <img src="https://m.media-amazon.com/images/I/81KkrQWEHIL._SX3000_.jpg" className="d-block w-100" alt="..." />
+                            <img src="https://m.media-amazon.com/images/I/71U-Q+N7PXL._SX3000_.jpg" className="d-block w-100" alt="..." />
                         </div>
                         <div className="carousel-item" data-bs-interval="200">
                             <img src="https://m.media-amazon.com/images/I/61zAjw4bqPL._SX3000_.jpg" className="d-block w-100" alt="..." />

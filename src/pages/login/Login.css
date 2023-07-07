@@ -87,7 +87,7 @@ form .btn-primary:hover, form a:hover {
     color: white;
 }
 
-.Login .error {
+.Login .error{
     min-width: 400px;
     background-color: #ffc4ad;
     padding-block: 10px;

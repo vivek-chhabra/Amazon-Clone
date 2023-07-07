@@ -10,7 +10,9 @@ import Cart from "./pages/cart/Cart";
 import Home from "./pages/home/Home";
 import { useContext } from "react";
 import "./App.css";
-
+import Checkout from "./pages/checkout/Checkout";
+import OrderSuccess from "./components/OrderSuccess";
+import YourOrders from "./pages/your orders/YourOrders";
 
 function App() {
     const { isAuthReady, user } = useContext(AuthContext);
@@ -24,12 +26,15 @@ function App() {
                     <Route path="/Amazon-Clone" element={<Navigate to={"/"} />} />
                     <Route path="/signin" element={user ? <Navigate to={"/"} /> : <Login />} />
                     <Route path="/signup" element={user ? <Navigate to={"/"} /> : <Signup />} />
-                    <Route path="/cart" element={<Cart />} />
-                    <Route path="/cart/cartId" element={<Cart />} />
-                    <Route path="/product/:id" element={user ? <ProductDetails /> : <Navigate to={"/signin"} />} />
+                    <Route path="/checkout" element={user ? <Checkout /> : <Navigate to={"/signin"} />} />
                     <Route path="/add-product" element={user ? <SellProduct /> : <Navigate to={"/signin"} />} />
+                    <Route path="/orderplaced" element={user ? <OrderSuccess /> : <Navigate to={"/signin"} />} />
+                    <Route path="/yourorders" element={user ? <YourOrders /> : <Navigate to={"/signin"} />} />
+                    <Route path="/cart" element={<Cart />} />
+                    <Route path="/product/:id" element={<ProductDetails />} />
                     <Route path="*" element={<PageNotFound />} />
                 </Routes>
+                
             </div>
         )
     );

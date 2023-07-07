@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { PrimaryMsg, randNum } from "../helpers";
+import { PrimaryMsg, currencyFormat, randNum } from "../helpers";
 import { useFirestore } from "../hooks/useFirestore";
 import { useInput } from "../hooks/useInput";
 import "./CartItem.css";
@@ -33,7 +33,7 @@ export default function CartItem({ document }) {
                     <div className="details">
                         <div className="item-name">{document.pName}</div>
                         <div className="item-price flex">
-                            INR {document.pPrice} {<div style={{ textDecoration: "line-through", left: "15px" }}>( {document.actualPrice} )</div>}
+                            {currencyFormat(document.pPrice)} {<div style={{ textDecoration: "line-through", left: "15px" }}>( {currencyFormat(document.actualPrice)} )</div>}
                         </div>
                         <p style={{ color: "#197601", fontSize: "80%", fontWeight: "600", marginBlock: "5px" }}>in stock</p>
                         <div className="units-bought">{randNum(100, 40)}+ bought in the past week</div>
@@ -43,7 +43,7 @@ export default function CartItem({ document }) {
                                     <option value={qty}>{qty}</option>
                                 ))}
                             </select>
-                            <div className="proceed pointer">
+                            <div className="proceed pointer" onClick={() => navigate("/checkout", { state: [document] })}>
                                 Proceed to Checkout ( {quantity} {quantity > 1 ? "items" : "item"} )
                             </div>
                             <button className="btn btn-danger" onClick={handleDelete}>
@@ -55,7 +55,7 @@ export default function CartItem({ document }) {
                 <hr />
                 <div className="subTotal">
                     Subtotal ({document.pQty > 1 ? "items " : "item "}
-                    {document.pQty}) : <span style={{ fontWeight: "700" }}>INR {document.pPrice * document.pQty}</span>
+                    {document.pQty}) : <span style={{ fontWeight: "700", marginLeft: '10px' }}>{currencyFormat(document.pPrice * document.pQty)}</span>
                 </div>
             </div>
         </>

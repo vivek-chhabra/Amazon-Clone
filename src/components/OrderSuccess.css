@@ -1,0 +1,143 @@
+.OrderSuccess {
+    gap: 30px;
+    width: 100%;
+    padding: 15px 20px;
+    background-color: white;
+    border-radius: 10px;
+    font-size: 90%;
+    margin-top: 40px;
+}
+
+.OrderSuccess .left-sec {
+    gap: 10px;
+    width: 60%;
+}
+
+.OrderSuccess .left-sec .confirm-msg {
+    font-weight: 600;
+    color: #007e60;
+    gap: 10px;
+    align-items: center;
+    font-size: 110%;
+    margin-bottom: 10px;
+}
+
+.OrderSuccess .left-sec .confirm-msg i {
+    padding: 6px;
+    padding-right: 7px;
+    scale: 0.9;
+    background-color: #007e60;
+    border-radius: 50px;
+    color: white;
+}
+
+.OrderSuccess .left-sec .address .add {
+    font-weight: 500;
+}
+
+.OrderSuccess .left-sec .emailAdd {
+    font-weight: 700;
+}
+
+.OrderSuccess .left-sec .hr {
+    width: 100%;
+    height: 2px;
+    border-radius: 5px;
+    background-color: rgb(185, 185, 185);
+    margin-block: 10px;
+}
+
+.OrderSuccess .left-sec .item {
+    gap: 100px;
+    align-items: center;
+    color: #007e60;
+}
+
+.OrderSuccess .left-sec .item .date {
+    font-weight: 600;
+    width: 250px;
+}
+
+.OrderSuccess .left-sec .item .img {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #F2F2F2;
+    min-width: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.OrderSuccess .left-sec .item img {
+    height: 70px;
+    filter: invert(0.05);
+}
+
+.OrderSuccess .left-sec a {
+    color: #017085;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 600;
+}
+
+.OrderSuccess .right-sec {
+    gap: 20px;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.OrderSuccess .right-sec .head {
+    font-weight: 500;
+}
+
+.OrderSuccess .right-sec .link {
+    color: #017085;
+    font-weight: 600;
+}
+
+.OrderSuccess .left-sec a:hover,
+.OrderSuccess .right-sec .link:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.OrderSuccess .right-sec img {
+    width: 50%;
+}
+
+.FD {
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    gap: 50px;
+    background-color: #ffe047;
+    margin-top: 50px;
+    font-size: 90%;
+}
+
+.FD img {
+    height: 70px;
+}
+
+.FD .flex-column {
+    width: 250px;
+}
+
+.continue-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#continue-shop {
+    padding: 8px 15px;
+    font-size: 90%;
+    display: inline;
+    border-radius: 10px;
+    background-color: #fed815;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    margin-top: 40px;
+}

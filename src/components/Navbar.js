@@ -23,8 +23,9 @@ export default function Navbar() {
     const { error: cartErr, document } = useCollection(`cart`, `uid`, `${auth?.currentUser?.uid}`);
 
     // handeling logout
-    const handleLogout = () => {
-        logOut();
+    const handleLogout = async () => {
+        await logOut();
+        navigate("/");
     };
 
     return (
@@ -56,7 +57,7 @@ export default function Navbar() {
                             <span className="big-text">Accounts & Lists</span>
                         </NavLink>
                     )}
-                    <NavLink to={"/"} className={"link"}>
+                    <NavLink to={"/yourorders"} className={"link"}>
                         <span className="small-text">Returns</span>
                         <span className="big-text">& Orders</span>
                     </NavLink>
