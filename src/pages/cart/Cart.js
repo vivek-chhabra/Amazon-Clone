@@ -24,7 +24,7 @@ export default function Cart() {
                 setLatest(document[0]);
             } else {
                 let item = document.reduce((acc, curr) => {
-                    latest = acc;
+                    let latest = acc;
                     if (acc.createdAt.seconds < curr.createdAt.seconds) {
                         latest = curr;
                     }
@@ -34,8 +34,6 @@ export default function Cart() {
             }
         }
     }, [document]);
-
-    console.log(latest);
 
     if (state) {
         var { productAdded } = state;

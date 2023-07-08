@@ -67,7 +67,6 @@ export default function Checkout() {
         if (success) {
             checkout.itemsInfo.forEach(async (item) => {
                 await deleteDocument("cart", item.id);
-                console.log(checkout)
             });
             navigate("/orderplaced");
         }

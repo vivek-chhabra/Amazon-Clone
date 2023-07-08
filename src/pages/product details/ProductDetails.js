@@ -78,10 +78,10 @@ export default function ProductDetails() {
             }
         }
         if (available) {
-            navigate("/checkout", { state: [cartItem] });
+            navigate("/checkout", { state: [latest] });
         } else {
             addDocument("cart", cartItem);
-            navigate("/checkout", { state: [cartItem] });
+            navigate("/checkout", { state: [latest] });
         }
     };
 
