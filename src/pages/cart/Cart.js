@@ -2,11 +2,11 @@ import { useLocation, useNavigate, useParams } from "react-router-dom";
 import Recommendation from "../../components/Recommendation";
 import { useCollection } from "../../hooks/useCollection";
 import { AuthContext } from "../../context/AuthContext";
+import React, { useContext, useEffect, useState } from "react";
 import CartItem from "../../components/CartItem";
 import SubTotal from "../../components/SubTotal";
 import Footer from "../../components/Footer";
 import { auth } from "../../firebase/config";
-import React, { useContext } from "react";
 import { ErrorMsg } from "../../helpers";
 import "./Cart.css";
 
@@ -16,6 +16,27 @@ export default function Cart() {
     const { id } = useParams();
     const { cartErr, document } = useCollection("cart", `uid`, `${auth?.currentUser?.uid}`);
     const { user } = useContext(AuthContext);
+    const [latest, setLatest] = useState(null); 
+
+    useEffect(() => {
+        if (document.length > 0) {
+            if (document.length === 1) {
+                setLatest(document[0]);
+            } else {
+                let item = document.reduce((acc, curr) => {
+                    latest = acc;
+                    if (acc.createdAt.seconds < curr.createdAt.seconds) {
+                        latest = curr;
+                    }
+                    return latest;
+                });
+                setLatest(item);
+            }
+        }
+    }, [document]);
+
+    console.log(latest);
+
     if (state) {
         var { productAdded } = state;
     }
@@ -46,8 +67,8 @@ export default function Cart() {
                 ) : (
                     <>
                         <div className="item-added flex">
-                            <div className={productAdded !== undefined ? "item flex pointer" : "item flex"} onClick={productAdded !== undefined ? () => navigate(`/product/${productAdded.id}`, { state: productAdded }) : null}>
-                                {document.productInfo && <img src={document.productInfo.pImage[0]} alt="" />}
+                            <div className={productAdded !== undefined ? "item flex pointer" : "item flex"} onClick={() => navigate(`/product/${latest.productInfo.id}`, { state: latest.productInfo })}>
+                                {latest && <img className="pointer" src={latest.pImage} alt="" />}
                                 <div className="add flex">
                                     <i class="fa-solid fa-check"></i>
                                     <p style={{ fontSize: "150%" }}>Added to Cart</p>
