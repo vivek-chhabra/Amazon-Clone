@@ -124,7 +124,7 @@ export default function ProductDetails() {
                             <div className="original-price flex">
                                 Typical Price : <span> {currencyFormat((state.pPrice * 100) / (100 - state.percentOff))}</span>
                             </div>
-                            <div className="shipping-charge">INR {+state.pPrice + +numDivisibleBy(100, 40, 10)} is the effective amount after including shipping charges and GST</div>
+                            <div className="shipping-charge">{currencyFormat(+state.pPrice + +numDivisibleBy(100, 40, 10))} is the effective amount after including shipping charges and GST</div>
                             <div className="btns flex">
                                 <select name="" id="" value={quantity} onChange={setQuantity} className="qty">
                                     {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16].map((qty) => (

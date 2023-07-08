@@ -61,10 +61,6 @@ export default function Navbar() {
                         <span className="small-text">Returns</span>
                         <span className="big-text">& Orders</span>
                     </NavLink>
-                    <NavLink to={"/"} className={"link"}>
-                        <span className="small-text">Your</span>
-                        <span className="big-text">Prime</span>
-                    </NavLink>
                     {user && (
                         <NavLink to={"/add-product"} className={"link"}>
                             <span className="small-text">Sell</span>
