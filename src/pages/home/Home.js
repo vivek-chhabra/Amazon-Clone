@@ -1,13 +1,13 @@
-import React, { useContext } from "react";
-import "./Home.css";
-import { NavLink } from "react-router-dom";
-import { AuthContext } from "../../context/AuthContext";
 import Recommendation from "../../components/Recommendation";
-import Footer from "../../components/Footer";
-import Product from "../../components/Product";
 import { useCollection } from "../../hooks/useCollection";
-import { doc } from "firebase/firestore";
+import { AuthContext } from "../../context/AuthContext";
 import { ErrorMsg, PrimaryMsg } from "../../helpers";
+import Product from "../../components/Product";
+import Footer from "../../components/Footer";
+import { NavLink } from "react-router-dom";
+import React, { useContext } from "react";
+import { doc } from "firebase/firestore";
+import "./Home.css";
 
 export default function Home() {
     const { user } = useContext(AuthContext);

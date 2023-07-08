@@ -1,15 +1,47 @@
 .YourOrders {
     gap: 30px;
     width: 100%;
+    min-height: 100vh;
     background-color: rgb(245, 245, 245);
+    padding: 20px;
     padding-bottom: 40px;
 }
+
+.YourOrders .empty-cart {
+    width: 100%;
+    padding: 40px 30px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(36, 64, 89);
+    font-weight: 600;
+}
+
+.YourOrders .empty-cart .head {
+    font-size: 180%;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: rgb(36, 64, 89);
+}
+
+.YourOrders .empty-cart .pointer {
+    font-weight: 600;
+}
+
+.YourOrders .empty-cart .pointer:hover {
+    cursor: pointer !important;
+    color: red !important;
+    text-decoration: underline;
+}
+
+.YourOrders .empty-cart .cart-msg {
+    width: 70%;
+}
+
 
 .YourOrders .container {
     max-width: 1050px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
 }
 
 .YourOrders .top-head {
@@ -26,6 +58,7 @@
 
 .YourOrders .orders .order .top {
     padding: 8px 15px;
+    padding-right: 30px;
     font-weight: 600;
     font-size: 75%;
     color: #424242;
@@ -41,7 +74,7 @@
     gap: 40px;
 }
 
-.YourOrders .orders .order .top .order-id span{
+.YourOrders .orders .order .top .order-id span {
     font-weight: 800;
 }
 
@@ -59,6 +92,7 @@
     gap: 30px;
     padding: 11px 20px;
     justify-content: space-between;
+    background-color: white;
 }
 
 .YourOrders .orders .order .middle .head {
@@ -71,21 +105,22 @@
 }
 
 .YourOrders .orders .order .middle .img {
-    padding: 10px 30px;
+    padding: 10px 20px;
     border-radius: 10px;
-    background-color: #E5E5E5;
-    min-width: 100px;
+    background-color: #e5e5e5;
+    /* width: 200px; */
     display: flex;
     justify-content: center;
     margin-right: 50px;
+    align-items: center;
 }
 
 .YourOrders .orders .order .middle img {
+    filter: invert(0.1);
     height: 70px;
-    filter: invert(0.10);
 }
 
-.YourOrders .orders .order .middle .item-info  {
+.YourOrders .orders .order .middle .item-info {
     font-weight: 600;
     font-size: 90%;
 }
@@ -107,7 +142,7 @@
     width: 270px;
     padding-block: 5px;
     border-radius: 10px;
-    background-color: #FED815;
+    background-color: #fed815;
     font-weight: 800;
     text-align: center;
     font-size: 90%;
@@ -146,16 +181,26 @@
 
 .YourOrders .orders .order .order-bottom {
     gap: 50px;
+    width: 100%;
     border-top: 1px solid rgb(160, 160, 160);
     padding: 10px 20px;
     font-size: 80%;
-}
-
-.YourOrders .orders .order .order-bottom .add {
-    color: gray;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
     border-radius: 0 0 10px 10px;
 }
 
-.YourOrders .primary {
-    width: 95%;
+.YourOrders .orders .order .order-bottom .add {
+    color: rgb(81, 81, 81);
+    border-radius: 0 0 10px 10px;
+}
+
+.YourOrders .orders .order .order-bottom .left {
+    gap: 4px;
+}
+
+.YourOrder .primary {
+    width: 90%;
+    margin-inline: auto;
 }

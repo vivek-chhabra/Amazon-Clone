@@ -1,12 +1,12 @@
-import { AuthContext } from "../context/AuthContext";
-import logo from "../assets/PngItem_12080.png";
 import { NavLink, useNavigate } from "react-router-dom";
+import { useCollection } from "../hooks/useCollection";
+import { AuthContext } from "../context/AuthContext";
+import { ErrorMsg, PrimaryMsg } from "../helpers";
+import logo from "../assets/PngItem_12080.png"; 
+import { useLogOut } from "../hooks/useLogOut";
 import { auth } from "../firebase/config";
 import React, { useContext } from "react";
 import "./Navbar.css";
-import { useLogOut } from "../hooks/useLogOut";
-import { ErrorMsg, PrimaryMsg } from "../helpers";
-import { useCollection } from "../hooks/useCollection";
 
 // categories array
 const categories = ["All", "Arts and Crafts", "Automative", "Beauty and Care", "Books", "Boys Fashion", "Computers", "Deals", "Degital Computer", "Girls Fashion", "Body", "Electronics", "Mens Fashion"];

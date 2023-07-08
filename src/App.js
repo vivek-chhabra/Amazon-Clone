@@ -1,8 +1,11 @@
 import ProductDetails from "./pages/product details/ProductDetails";
 import { Navigate, Route, Routes } from "react-router-dom";
+import YourOrders from "./pages/your orders/YourOrders";
 import PageNotFound from "./components/PageNotFound";
+import OrderSuccess from "./components/OrderSuccess";
 import { AuthContext } from "./context/AuthContext";
 import SellProduct from "./pages/sell/SellProduct";
+import Checkout from "./pages/checkout/Checkout";
 import Signup from "./pages/signup/Signup";
 import Navbar from "./components/Navbar";
 import Login from "./pages/login/Login";
@@ -10,9 +13,6 @@ import Cart from "./pages/cart/Cart";
 import Home from "./pages/home/Home";
 import { useContext } from "react";
 import "./App.css";
-import Checkout from "./pages/checkout/Checkout";
-import OrderSuccess from "./components/OrderSuccess";
-import YourOrders from "./pages/your orders/YourOrders";
 
 function App() {
     const { isAuthReady, user } = useContext(AuthContext);

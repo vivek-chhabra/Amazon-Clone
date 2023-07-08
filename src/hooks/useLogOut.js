@@ -2,8 +2,8 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { doc, setDoc } from "firebase/firestore";
-import { auth, db } from "../firebase/config";
 import { useCollection } from "./useCollection";
+import { auth, db } from "../firebase/config";
 
 export function useLogOut() {
     const [error, setError] = useState(null);

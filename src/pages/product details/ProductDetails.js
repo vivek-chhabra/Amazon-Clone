@@ -1,11 +1,11 @@
-import { NavLink, useLocation, useNavigate, useParams } from "react-router-dom";
-import "./ProductDetails.css";
-import React, { useState } from "react";
 import { ErrorMsg, capitalize, currencyFormat, numDivisibleBy, randNum } from "../../helpers";
-import { useInput } from "../../hooks/useInput";
-import { useFirestore } from "../../hooks/useFirestore";
-import { auth } from "../../firebase/config";
+import { NavLink, useLocation, useNavigate, useParams } from "react-router-dom";
 import { useCollection } from "../../hooks/useCollection";
+import { useFirestore } from "../../hooks/useFirestore";
+import { useInput } from "../../hooks/useInput";
+import { auth } from "../../firebase/config";
+import React, { useEffect, useState } from "react";
+import "./ProductDetails.css";
 
 export default function ProductDetails() {
     const { id } = useParams();
@@ -42,6 +42,18 @@ export default function ProductDetails() {
 
     // useCollection hook
     const { error: cartErr, document } = useCollection(`cart`, `uid`, `${auth?.currentUser?.uid}`);
+    let latest;
+    useEffect(() => {
+        if (document.length > 0) {
+            latest = document.reduce((acc, curr) => {
+                let latest = acc;
+                if (acc.createdAt.seconds < curr.createdAt.seconds) {
+                    latest = curr;
+                }
+                return latest;
+            });
+        }
+    }, [document]);
 
     // adding item to the cart
     const AddToCart = () => {
@@ -59,6 +71,7 @@ export default function ProductDetails() {
     // proceeding to payment
     const prodeedToPay = () => {
         let available = false;
+        console.log(latest);
         for (let i = 0; i < document.length; i++) {
             if (state.pName === document[i].pName) {
                 available = true;

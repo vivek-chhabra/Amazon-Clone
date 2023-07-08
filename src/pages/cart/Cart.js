@@ -1,14 +1,14 @@
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import Recommendation from "../../components/Recommendation";
 import { useCollection } from "../../hooks/useCollection";
+import { AuthContext } from "../../context/AuthContext";
 import CartItem from "../../components/CartItem";
 import SubTotal from "../../components/SubTotal";
 import Footer from "../../components/Footer";
 import { auth } from "../../firebase/config";
-import { ErrorMsg } from "../../helpers";
 import React, { useContext } from "react";
+import { ErrorMsg } from "../../helpers";
 import "./Cart.css";
-import { AuthContext } from "../../context/AuthContext";
 
 export default function Cart() {
     const { state } = useLocation();

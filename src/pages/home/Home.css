@@ -35,25 +35,25 @@
     flex-wrap: wrap;
 }
 
-.row .col .head {
+.Home .row .col .head {
     font-size: 120%;
     font-weight: 600;
     margin-bottom: 5px;
 }
 
-.row .col .single-img {
+.Home .row .col .single-img {
     width: 100%;
     height: 300px;
 }
 
-.row .col img {
+.Home .row .col img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 5px;
 }
 
-.row .col .categories {
+.Home .row .col .categories {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;

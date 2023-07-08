@@ -1,13 +1,13 @@
 import { NavLink, Navigate, useNavigate } from "react-router-dom";
-import "./OrderSuccess.css";
-import React, { useContext, useEffect } from "react";
-import { auth } from "../firebase/config";
-import Recommendation from "./Recommendation";
-import Footer from "./Footer";
-import { AuthContext } from "../context/AuthContext";
 import { useCollection } from "../hooks/useCollection";
-import { ErrorMsg } from "../helpers";
 import { useFirestore } from "../hooks/useFirestore";
+import React, { useContext, useEffect } from "react";
+import { AuthContext } from "../context/AuthContext";
+import Recommendation from "./Recommendation";
+import { auth } from "../firebase/config";
+import { ErrorMsg } from "../helpers";
+import Footer from "./Footer";
+import "./OrderSuccess.css";
 
 export default function OrderSuccess() {
     const { user } = useContext(AuthContext);
@@ -47,7 +47,7 @@ export default function OrderSuccess() {
                                     <div className="address">
                                         <div className="add">
                                             <b>Shipping to {auth?.currentUser?.displayName}, </b>
-                                            {latestDoc.checkoutInfo.address}.<div className="emailAdd">, Email Address : vivkecb8642@gmail.com</div>{" "}
+                                            {latestDoc.checkoutInfo.address}.<div className="emailAdd">, Email Address : {auth?.currentUser?.email}</div>{" "}
                                         </div>
                                     </div>
                                     <div className="hr"></div>
@@ -61,7 +61,7 @@ export default function OrderSuccess() {
                                             <img src={doc.pImage} alt="" />
                                         </div>
                                     </div>
-                                    <NavLink to={"/myorders"} onClick={() => navigate("/myorders")}>
+                                    <NavLink to={"/yourorders"} onClick={() => navigate("/myorders")}>
                                         Go to your order <i class="fa-solid fa-angle-right"></i>{" "}
                                     </NavLink>
                                 </div>

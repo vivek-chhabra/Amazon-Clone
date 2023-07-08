@@ -1,9 +1,9 @@
-import { useLocation, useNavigate } from "react-router-dom";
 import { ErrorMsg, PrimaryMsg, SuccessMsg, currencyFormat, numDivisibleBy, randNum } from "../../helpers";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useFirestore } from "../../hooks/useFirestore";
+import React, { useEffect, useState } from "react";
 import { useInput } from "../../hooks/useInput";
 import "./Checkout.css";
-import React, { useEffect, useState } from "react";
 
 export default function Checkout() {
     // useInput hook
@@ -64,13 +64,14 @@ export default function Checkout() {
     };
 
     useEffect(() => {
-        if (response.success) {
-            checkout.itemsInfo.forEach((item) => {
-                deleteDocument("cart", item.id);
+        if (success) {
+            checkout.itemsInfo.forEach(async (item) => {
+                await deleteDocument("cart", item.id);
+                console.log(checkout)
             });
             navigate("/orderplaced");
         }
-    }, [response.success]);
+    }, [success]);
 
     return (
         <div className="Checkout flex-column">

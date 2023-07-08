@@ -1,9 +1,9 @@
-import { useNavigate } from "react-router-dom";
 import { PrimaryMsg, currencyFormat, randNum } from "../helpers";
 import { useFirestore } from "../hooks/useFirestore";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useInput } from "../hooks/useInput";
 import "./CartItem.css";
-import React, { useEffect, useState } from "react";
 
 export default function CartItem({ document }) {
     const { response, editDocument, deleteDocument } = useFirestore();

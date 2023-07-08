@@ -1,11 +1,11 @@
+import { NavLink, useNavigate } from "react-router-dom";
 import { useLoginAuth } from "../../hooks/useLoginAuth";
+import { AuthContext } from "../../context/AuthContext";
 import { useToggle } from "../../hooks/useToggle";
 import { useInput } from "../../hooks/useInput";
-import { ErrorMsg } from "../../helpers";
 import React, { useContext } from "react";
+import { ErrorMsg } from "../../helpers";
 import "./Login.css";
-import { NavLink, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../context/AuthContext";
 
 export default function Login() {
     // useInput hook

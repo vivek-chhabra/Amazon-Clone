@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import "./SubTotal.css";
-import React from "react";
 import { currencyFormat } from "../helpers";
+import React from "react";
+import "./SubTotal.css";
 
 export default function SubTotal({ document }) {
     const navigate = useNavigate();
