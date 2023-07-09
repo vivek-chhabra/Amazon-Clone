@@ -61,7 +61,7 @@ export default function OrderSuccess() {
                                             <img src={doc.pImage} alt="" />
                                         </div>
                                     </div>
-                                    <NavLink to={"/yourorders"} onClick={() => navigate("/myorders")}>
+                                    <NavLink to={"/yourorders"}>
                                         Go to your order <i class="fa-solid fa-angle-right"></i>{" "}
                                     </NavLink>
                                 </div>
