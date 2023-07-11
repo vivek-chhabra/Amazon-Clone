@@ -7,12 +7,12 @@ import "./Checkout.css";
 
 export default function Checkout() {
     // useInput hook
-    const [address, updateAddress] = useInput("");
-    const [cardNo, updateCardNo] = useInput("");
-    const [name, updateName] = useInput("");
     const [expirationDate, updateExpirationDate] = useInput("");
     const [securityCode, updateSecurityCode] = useInput("");
+    const [address, updateAddress] = useInput("");
     const [formErr, setFormErr] = useState(null);
+    const [cardNo, updateCardNo] = useInput("");
+    const [name, updateName] = useInput("");
 
     const { state } = useLocation();
     const navigate = useNavigate();
@@ -55,7 +55,6 @@ export default function Checkout() {
             window.scrollTo(0, 0);
             return;
         } else if (typeof +cardNo !== "number") {
-            alert("adf");
             setFormErr("Card number should only contain the value of type number");
             window.scrollTo(0, 0);
             return;

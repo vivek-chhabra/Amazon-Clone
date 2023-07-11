@@ -2,9 +2,9 @@ import { ErrorMsg, capitalize, currencyFormat, numDivisibleBy, randNum } from ".
 import { NavLink, useLocation, useNavigate, useParams } from "react-router-dom";
 import { useCollection } from "../../hooks/useCollection";
 import { useFirestore } from "../../hooks/useFirestore";
+import React, { useEffect, useState } from "react";
 import { useInput } from "../../hooks/useInput";
 import { auth } from "../../firebase/config";
-import React, { useEffect, useState } from "react";
 import "./ProductDetails.css";
 
 export default function ProductDetails() {
@@ -13,6 +13,7 @@ export default function ProductDetails() {
     const { state } = useLocation();
     const [imgIdx, setImgIdx] = useState(0);
     const [error, setError] = useState(null);
+    const [latest, setLatest] = useState({});
 
     // useInput hook
     const [quantity, setQuantity] = useInput(1);
@@ -42,18 +43,22 @@ export default function ProductDetails() {
 
     // useCollection hook
     const { error: cartErr, document } = useCollection(`cart`, `uid`, `${auth?.currentUser?.uid}`);
-    let latest;
-    useEffect(() => {
+    console.log("out of the funciotn", latest);
+
+    const findLatest = () => {
+        let newOne;
         if (document.length > 0) {
-            latest = document.reduce((acc, curr) => {
+            newOne = document.reduce((acc, curr) => {
                 let latest = acc;
                 if (acc.createdAt.seconds < curr.createdAt.seconds) {
                     latest = curr;
                 }
                 return latest;
             });
+            setLatest(newOne);
         }
-    }, [document]);
+        return newOne;
+    }
 
     // adding item to the cart
     const AddToCart = () => {
@@ -69,18 +74,26 @@ export default function ProductDetails() {
     };
 
     // proceeding to payment
-    const prodeedToPay = () => {
+    const prodeedToPay = async () => {
         let available = false;
-        console.log(latest);
+        if (auth?.currentUser?.uid == null) {
+            navigate("/signin");
+            return;
+        }
         for (let i = 0; i < document.length; i++) {
             if (state.pName === document[i].pName) {
                 available = true;
             }
         }
+
+        // checking the item weather available in the cart or not
         if (available) {
-            navigate("/checkout", { state: [latest] });
+            // console.log("in the detalis", latest);
+            // navigate("/checkout", { state: [latest] });
         } else {
-            addDocument("cart", cartItem);
+            // console.log("in the detalis", latest);
+            await addDocument("cart", cartItem);
+            console.log("in the function", findLatest());
             navigate("/checkout", { state: [latest] });
         }
     };
