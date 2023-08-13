@@ -8,6 +8,22 @@ This project is an Amazon clone that replicates the full commerce functionality 
 
 <br>
 
+![Screenshot (65)](https://github.com/vivek-chhabra/Amazon-Clone/assets/105328667/b471c296-65c2-43f0-a496-5a920cf5557f)
+
+<br>
+
+![Screenshot (210)](https://github.com/vivek-chhabra/Amazon-Clone/assets/105328667/ce7407a4-4489-4e81-9a3c-7cb2681f0734)
+
+<br>
+
+![04 08 2023_17 58 54_REC](https://github.com/vivek-chhabra/Amazon-Clone/assets/105328667/ca2ae56e-ba85-4e73-8a3d-5817a0206f63)
+
+<br>
+
+![04 08 2023_18 02 07_REC](https://github.com/vivek-chhabra/Amazon-Clone/assets/105328667/5b9d57bc-759a-47f3-ac59-1e11c0f8edd8)
+
+<br>
+
 ## Features
 
 - 🏠 Home Page: Displays all the products available for sale.
