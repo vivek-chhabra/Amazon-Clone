@@ -13,7 +13,7 @@ export default function ProductDetails() {
     const { state } = useLocation();
     const [imgIdx, setImgIdx] = useState(0);
     const [error, setError] = useState(null);
-    const [latest, setLatest] = useState({});
+    const [latest, setLatest] = useState();
 
     // useInput hook
     const [quantity, setQuantity] = useInput(1);
@@ -45,7 +45,7 @@ export default function ProductDetails() {
     const { error: cartErr, document } = useCollection(`cart`, `uid`, `${auth?.currentUser?.uid}`);
     console.log("out of the funciotn", latest);
 
-    const findLatest = () => {
+    useEffect(() => {
         let newOne;
         if (document.length > 0) {
             newOne = document.reduce((acc, curr) => {
@@ -58,7 +58,7 @@ export default function ProductDetails() {
             setLatest(newOne);
         }
         return newOne;
-    }
+    }, [document]);
 
     // adding item to the cart
     const AddToCart = () => {
@@ -93,8 +93,8 @@ export default function ProductDetails() {
         } else {
             // console.log("in the detalis", latest);
             await addDocument("cart", cartItem);
-            console.log("in the function", findLatest());
-            navigate("/checkout", { state: [latest] });
+            console.log("in the function", latest);
+            // navigate("/checkout", { state: [latest] });
         }
     };
 
@@ -147,7 +147,7 @@ export default function ProductDetails() {
                                 <button className="add-to-cart" onClick={AddToCart}>
                                     Add to Cart
                                 </button>
-                                <button className="buy" onClick={prodeedToPay}>
+                                <button className="buy">
                                     Buy Now
                                 </button>
                             </div>

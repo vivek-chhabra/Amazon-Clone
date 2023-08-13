@@ -142,6 +142,7 @@
 
 .buy:hover {
     background-color: #f19000;
+    cursor: default !important;
 }
 
 .add-to-cart {
