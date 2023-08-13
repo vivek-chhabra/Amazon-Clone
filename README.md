@@ -2,7 +2,9 @@
 
 This project is an Amazon clone that replicates the full commerce functionality of the Amazon website, including buying and selling products, as well as order confirmation. The project is built using React ⚛️, CSS 🎨, JSX ✏️, JavaScript 🚀, Firestore Authentication, and Firebase database.
 
-> [Run This Project](https://vivek-chhabra.github.io/Amazon-Clone/)
+<br>
+
+> [Live Demo](https://vivek-chhabra.github.io/Amazon-Clone/)
 
 <br>
 
