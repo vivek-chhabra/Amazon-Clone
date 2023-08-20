@@ -1,6 +1,5 @@
 # Amazon Clone
-
-This project is an Amazon clone that replicates the full commerce functionality of the Amazon website, including buying and selling products, as well as order confirmation. The project is built using React ⚛️, CSS 🎨, JSX ✏️, JavaScript 🚀, Firestore Authentication, and Firebase database.
+**This project is an Amazon clone that replicates the full commerce functionality of the Amazon website, including buying and selling products, as well as order confirmation. The project is built using React ⚛️, CSS 🎨, JSX ✏️, JavaScript 🚀, Firestore Authentication, and Firebase database.**
 
 <br>
 
@@ -20,17 +19,13 @@ This project is an Amazon clone that replicates the full commerce functionality 
 
 <br>
 
-![04 08 2023_18 02 07_REC](https://github.com/vivek-chhabra/Amazon-Clone/assets/105328667/5b9d57bc-759a-47f3-ac59-1e11c0f8edd8)
-
-<br>
-
 ## Features
 
 - 🏠 Home Page: Displays all the products available for sale.
 - 📄 Product Details Page: Shows detailed information about a specific product. From this page, users can select the quantity and proceed to add the product to their cart or directly buy the product.
 - 🛒 Cart Page: Displays all the items added to the cart. Users can proceed to checkout from this page.
 - 📦 Order Placed Page: When the user chooses to buy a product, they are redirected to this page, where an order confirmation message is displayed.
-- ↩️ Returns & Orders: Users can view their placed orders by clicking on the "Returns & Orders" link in the navigation bar.
+- ↩️ Returns & Orders: Users can view their placed orders by clicking on the "Returns & Orders" link at the navigation bar.
 
 <br>
 
@@ -40,8 +35,8 @@ This project is an Amazon clone that replicates the full commerce functionality 
 - 🎨 CSS: Cascading Style Sheets for styling the components.
 - ✏️ JSX: A syntax extension for JavaScript, used in React to define the structure of components.
 - 🚀 JavaScript: Programming language used for logic implementation.
-- 🔐 Firestore Authentication: Firebase authentication service for user management and authentication.
-- 🔥 Firebase Database: Cloud-hosted NoSQL database provided by Firebase.
+- 🔐 Firebase Authentication: Firebase authentication service for user management and authentication.
+- 🔥 Firestore Database: Cloud-hosted NoSQL database provided by Firebase.
 
 <br>
 
