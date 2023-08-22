@@ -1,8 +1,8 @@
 import { useLocation, useNavigate, useParams } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
 import Recommendation from "../../components/Recommendation";
 import { useCollection } from "../../hooks/useCollection";
 import { AuthContext } from "../../context/AuthContext";
-import React, { useContext, useEffect, useState } from "react";
 import CartItem from "../../components/CartItem";
 import SubTotal from "../../components/SubTotal";
 import Footer from "../../components/Footer";
@@ -16,7 +16,12 @@ export default function Cart() {
     const { id } = useParams();
     const { cartErr, document } = useCollection("cart", `uid`, `${auth?.currentUser?.uid}`);
     const { user } = useContext(AuthContext);
-    const [latest, setLatest] = useState(null); 
+    const [latest, setLatest] = useState(null);
+
+    // to scroll the page at the top
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     useEffect(() => {
         if (document.length > 0) {

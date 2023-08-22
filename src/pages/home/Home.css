@@ -84,6 +84,7 @@
 .products .row #signIn {
     height: 100px;
     padding-bottom: 100px;
+    z-index: 10;
 }
 
 .products .row #signIn .navLink {

@@ -15,6 +15,11 @@ export default function ProductDetails() {
     const [error, setError] = useState(null);
     const [latest, setLatest] = useState();
 
+    // to scroll the page at the top
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     // useInput hook
     const [quantity, setQuantity] = useInput(1);
 
@@ -43,7 +48,6 @@ export default function ProductDetails() {
 
     // useCollection hook
     const { error: cartErr, document } = useCollection(`cart`, `uid`, `${auth?.currentUser?.uid}`);
-    console.log("out of the funciotn", latest);
 
     useEffect(() => {
         let newOne;
@@ -55,10 +59,10 @@ export default function ProductDetails() {
                 }
                 return latest;
             });
+            console.log("in the useEffect", newOne);
             setLatest(newOne);
         }
-        return newOne;
-    }, [document]);
+    }, [document, latest]);
 
     // adding item to the cart
     const AddToCart = () => {
@@ -74,7 +78,7 @@ export default function ProductDetails() {
     };
 
     // proceeding to payment
-    const prodeedToPay = async () => {
+    const proceedToPay = async () => {
         let available = false;
         if (auth?.currentUser?.uid == null) {
             navigate("/signin");
@@ -89,12 +93,12 @@ export default function ProductDetails() {
         // checking the item weather available in the cart or not
         if (available) {
             // console.log("in the detalis", latest);
-            // navigate("/checkout", { state: [latest] });
+            navigate("/checkout", { state: [state] });
         } else {
             // console.log("in the detalis", latest);
             await addDocument("cart", cartItem);
-            console.log("in the function", latest);
-            // navigate("/checkout", { state: [latest] });
+            // console.log("in the function", latest);
+            navigate("/checkout", { state: [state] });
         }
     };
 

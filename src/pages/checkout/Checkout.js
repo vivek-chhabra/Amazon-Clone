@@ -14,6 +14,12 @@ export default function Checkout() {
     const [cardNo, updateCardNo] = useInput("");
     const [name, updateName] = useInput("");
 
+    // to scroll the page at the top 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
+    // useLocation
     const { state } = useLocation();
     const navigate = useNavigate();
 
