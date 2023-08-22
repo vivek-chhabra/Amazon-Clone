@@ -66,9 +66,3 @@
 ## Contact
 
 For any inquiries or assistance, please feel free to contact us at [vivekcb8642@gmail.com](vivekcb8642@gmail.com). 📧
-
-<br>
-
-## Credits
-
-This project was developed by [Vivke Chhabra].
