@@ -11,14 +11,6 @@
 
 <br>
 
-![Screenshot (210)](https://github.com/vivek-chhabra/Amazon-Clone/assets/105328667/ce7407a4-4489-4e81-9a3c-7cb2681f0734)
-
-<br>
-
-![04 08 2023_17 58 54_REC](https://github.com/vivek-chhabra/Amazon-Clone/assets/105328667/ca2ae56e-ba85-4e73-8a3d-5817a0206f63)
-
-<br>
-
 ## Features
 
 - 🏠 Home Page: Displays all the products available for sale.
