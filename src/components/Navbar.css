@@ -60,6 +60,7 @@ form .icon {
     justify-content: center;
     align-items: center;
     color: black;
+    border: none;
 }
 
 form i {
@@ -69,6 +70,44 @@ form i {
 form .icon:hover {
     cursor: pointer;
     background-color: #ff9a1e;
+}
+
+form .query-items {
+    position: absolute;
+    color: black;
+    width: 100%;
+    top: 45px;
+    border-radius: 5px;
+    left: 0;
+    padding: 5px 10px;
+    background-color: rgb(245, 245, 245);
+    display: flex;
+    flex-direction: column;
+}
+
+form .query-items > *:not(:first-child)::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    border-top: 2px solid rgba(50, 50, 50, 0.311);
+    top: 0px;
+}
+
+form .query-items > * {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-block: 4px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+form .query-items > *:hover {
+    background-color: #ffe7c9;
+    cursor: pointer;   
 }
 
 .links {
